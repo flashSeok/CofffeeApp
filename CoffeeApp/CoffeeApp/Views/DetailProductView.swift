@@ -16,22 +16,26 @@ class DetailProductView: UIView {
     //MARK: - 멤버 저장속성 구현
     // 멤버 데이터가 바뀌면 ===> didSet(속성감시자) 실행
     // 속성감시자도 (저장 속성을 관찰하는) 어쨌든 자체는 메서드임
-    var selectedProduct: Product? {
+    var selectedProduct: PrdList? {
         didSet {
             guard let selectedProduct = selectedProduct else {
                 // 멤버가 없으면 (즉, 새로운 멤버를 추가할때의 상황)
                 // 멤버가 없으면 버튼을 "SAVE"라고 셋팅
 //                saveButton.setTitle("SAVE", for: .normal)
                 // 멤버가 없으면, 타입 저장 속성의 현재 숫자 가져오기
-//                productNameKR.text = "\(selectedProduct?.prdNameKr)"
+                productNameKR.text = "\(selectedProduct?.prdNameKr)"
                 return
             }
             // 멤버가 있으면
-        //    mainImageView.image = selectedProduct.prdImg
+//            mainImageView.image = selectedProduct.prdImg
             productNameKR.text = selectedProduct.prdNameKr
             productNameEN.text = selectedProduct.prdNameEn
             productNotice.text = selectedProduct.prdNotice
-            productPrice.text = commons.getDecimalPrice(price: selectedProduct.prdPrice)
+            
+            guard let price = selectedProduct.prdPrice else { return }
+            var priceInt = Int(price)!
+            
+            productPrice.text = commons.getDecimalPrice(price: priceInt)
             
             loadImage()
         

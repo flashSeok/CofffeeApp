@@ -13,6 +13,7 @@ final class MainTableViewCellController: UIViewController {
 
     // 🍏 서치 컨트롤러 생성 ===> 네비게이션 아이템에 할당
     let searchController = UISearchController()
+    let commons = Commons()
     
     // 🍎 서치 Results컨트롤러 ⭐️
     //let search = UISearchController(searchResultsController: <#T##UIViewController?#>)
@@ -23,10 +24,10 @@ final class MainTableViewCellController: UIViewController {
     let mainTableView = UITableView()
     
     // 네트워크 매니저 (싱글톤)
-    var networkManager = NetworkManager.shared
+    var networkManager = ProductNetworkManager.shared
     
     // (음악 데이터를 다루기 위함) 빈배열로 시작
-    var productArrays: [Product] = []
+    var productArrays: [PrdList] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,7 @@ final class MainTableViewCellController: UIViewController {
         
         setupNaviBar()
         setupTableView()
-//        setupDatas()
+        setupDatas()
         setUpTableViewConstraints()
         setUpSearchBar()
     }
@@ -100,7 +101,7 @@ final class MainTableViewCellController: UIViewController {
             switch result {
             case .success(let productDatas):
                 // 데이터(배열)을 받아오고 난 후
-//                print(productDatas)
+                print(productDatas)
                 self.productArrays = productDatas
                 print(self.productArrays)
                 // 테이블뷰 리로드
@@ -138,26 +139,21 @@ extension MainTableViewCellController: UITableViewDataSource {
         // (사전에 셀을 등록하는 과정이 내부 메커니즘에 존재)
         let cell = mainTableView.dequeueReusableCell(withIdentifier: Cell.productCellIdentifier, for: indexPath) as! MainTableViewCell
     
+        
+        var price = Int(productArrays[indexPath.row].prdPrice!)!
+        
+        
         cell.imageUrl = productArrays[indexPath.row].prdImg
         cell.prdNameKR.text = productArrays[indexPath.row].prdNameKr
         cell.prdNameEn.text = productArrays[indexPath.row].prdNameEn
         cell.prdNotice = productArrays[indexPath.row].prdNotice
-        cell.prdPrice.text = getDecimalPrice(price: productArrays[indexPath.row].prdPrice) + " 원"
+        cell.prdPrice.text = commons.getDecimalPrice(price: price)
         
         print(productArrays[indexPath.row])
         
         cell.selectionStyle = .none
         
         return cell
-    }
-    
-    func getDecimalPrice(price: Int) -> String {
-        
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        
-        guard let prdPriceString = numberFormatter.string(from: NSNumber(value: price)) else { return "값 오류"}
-        return String(prdPriceString)
     }
     
 }

@@ -11,7 +11,7 @@ final class DetailProductViewController: UIViewController {
 
     private let detailProductView = DetailProductView()
     
-    var selectedProduct: Product?
+    var selectedProduct: PrdList?
     
     override func loadView() {
         view = detailProductView
