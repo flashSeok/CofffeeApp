@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CC4D0B2728CD8F7700BBA563 /* LoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4D0B2628CD8F7700BBA563 /* LoginInfo.swift */; };
+		CC4D0B2928CDD00A00BBA563 /* LoginNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4D0B2828CDD00A00BBA563 /* LoginNetworkManager.swift */; };
+		CCA5867928CCE5FF00568B95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5867828CCE5FF00568B95 /* AppDelegate.swift */; };
+		CCA5867B28CCE5FF00568B95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5867A28CCE5FF00568B95 /* SceneDelegate.swift */; };
+		CCA5867D28CCE5FF00568B95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5867C28CCE5FF00568B95 /* ViewController.swift */; };
+		CCA5868028CCE5FF00568B95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA5867E28CCE5FF00568B95 /* Main.storyboard */; };
+		CCA5868328CCE5FF00568B95 /* CoffeeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CCA5868128CCE5FF00568B95 /* CoffeeApp.xcdatamodeld */; };
+		CCA5868528CCE60000568B95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCA5868428CCE60000568B95 /* Assets.xcassets */; };
+		CCA5868828CCE60000568B95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA5868628CCE60000568B95 /* LaunchScreen.storyboard */; };
+		CCA5869628CCE66200568B95 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5869528CCE66200568B95 /* Constants.swift */; };
+		CCA5869828CCE67500568B95 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5869728CCE67500568B95 /* Commons.swift */; };
+		CCA5869A28CCE6A000568B95 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5869928CCE6A000568B95 /* NetworkManager.swift */; };
+		CCA5869C28CCE6B700568B95 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5869B28CCE6B700568B95 /* Product.swift */; };
+		CCA5869E28CCE6F600568B95 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5869D28CCE6F600568B95 /* MainTableViewCell.swift */; };
+		CCA586A128CCE72800568B95 /* DetailProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA586A028CCE72800568B95 /* DetailProductView.swift */; };
+		CCA586A328CCE75800568B95 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA586A228CCE75800568B95 /* LoginView.swift */; };
+		CCA586A528CCE79F00568B95 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA586A428CCE79F00568B95 /* LoginViewController.swift */; };
+		CCA586A728CCE7BB00568B95 /* MainTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA586A628CCE7BB00568B95 /* MainTableViewCellController.swift */; };
+		CCA586A928CCE7D800568B95 /* DetailProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA586A828CCE7D800568B95 /* DetailProductViewController.swift */; };
+		CCA586AB28CCE7F900568B95 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA586AA28CCE7F900568B95 /* MyProfileViewController.swift */; };
+		CCA586B028CD631500568B95 /* LoginViewController0911.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA586AF28CD631500568B95 /* LoginViewController0911.swift */; };
+		CCD3FFE528D46A6D00307CD1 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3FFE428D46A6D00307CD1 /* ExtensionUIColor.swift */; };
+		CCD3FFE828D46B6400307CD1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CCD3FFE728D46B6400307CD1 /* SnapKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CC4D0B2628CD8F7700BBA563 /* LoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfo.swift; sourceTree = "<group>"; };
+		CC4D0B2828CDD00A00BBA563 /* LoginNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkManager.swift; sourceTree = "<group>"; };
+		CCA5867528CCE5FF00568B95 /* CoffeeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCA5867828CCE5FF00568B95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CCA5867A28CCE5FF00568B95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CCA5867C28CCE5FF00568B95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CCA5867F28CCE5FF00568B95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CCA5868228CCE5FF00568B95 /* CoffeeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoffeeApp.xcdatamodel; sourceTree = "<group>"; };
+		CCA5868428CCE60000568B95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCA5868728CCE60000568B95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CCA5868928CCE60000568B95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCA5869528CCE66200568B95 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CCA5869728CCE67500568B95 /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
+		CCA5869928CCE6A000568B95 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CCA5869B28CCE6B700568B95 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		CCA5869D28CCE6F600568B95 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		CCA586A028CCE72800568B95 /* DetailProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductView.swift; sourceTree = "<group>"; };
+		CCA586A228CCE75800568B95 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CCA586A428CCE79F00568B95 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CCA586A628CCE7BB00568B95 /* MainTableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCellController.swift; sourceTree = "<group>"; };
+		CCA586A828CCE7D800568B95 /* DetailProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductViewController.swift; sourceTree = "<group>"; };
+		CCA586AA28CCE7F900568B95 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		CCA586AF28CD631500568B95 /* LoginViewController0911.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController0911.swift; sourceTree = "<group>"; };
+		CCD3FFE428D46A6D00307CD1 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CCA5867228CCE5FF00568B95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCD3FFE828D46B6400307CD1 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CCA5866C28CCE5FF00568B95 = {
+			isa = PBXGroup;
+			children = (
+				CCA5867728CCE5FF00568B95 /* CoffeeApp */,
+				CCA5867628CCE5FF00568B95 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CCA5867628CCE5FF00568B95 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCA5867528CCE5FF00568B95 /* CoffeeApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CCA5867728CCE5FF00568B95 /* CoffeeApp */ = {
+			isa = PBXGroup;
+			children = (
+				CCA5867828CCE5FF00568B95 /* AppDelegate.swift */,
+				CCA5867A28CCE5FF00568B95 /* SceneDelegate.swift */,
+				CCA5869328CCE62500568B95 /* Helpers */,
+				CCA5869228CCE61E00568B95 /* Networking */,
+				CCA5869128CCE61900568B95 /* Models */,
+				CCA5869028CCE61300568B95 /* Views */,
+				CCA5868F28CCE60B00568B95 /* Controllers */,
+				CCA5868428CCE60000568B95 /* Assets.xcassets */,
+				CCA5868628CCE60000568B95 /* LaunchScreen.storyboard */,
+				CCA5868928CCE60000568B95 /* Info.plist */,
+				CCA5868128CCE5FF00568B95 /* CoffeeApp.xcdatamodeld */,
+			);
+			path = CoffeeApp;
+			sourceTree = "<group>";
+		};
+		CCA5868F28CCE60B00568B95 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CCA5867C28CCE5FF00568B95 /* ViewController.swift */,
+				CCA586A428CCE79F00568B95 /* LoginViewController.swift */,
+				CCA586A628CCE7BB00568B95 /* MainTableViewCellController.swift */,
+				CCA586A828CCE7D800568B95 /* DetailProductViewController.swift */,
+				CCA586AA28CCE7F900568B95 /* MyProfileViewController.swift */,
+				CCA586AF28CD631500568B95 /* LoginViewController0911.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CCA5869028CCE61300568B95 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCA5867E28CCE5FF00568B95 /* Main.storyboard */,
+				CCA5869D28CCE6F600568B95 /* MainTableViewCell.swift */,
+				CCA586A028CCE72800568B95 /* DetailProductView.swift */,
+				CCA586A228CCE75800568B95 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CCA5869128CCE61900568B95 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CCA5869B28CCE6B700568B95 /* Product.swift */,
+				CC4D0B2628CD8F7700BBA563 /* LoginInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CCA5869228CCE61E00568B95 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CCA5869928CCE6A000568B95 /* NetworkManager.swift */,
+				CC4D0B2828CDD00A00BBA563 /* LoginNetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CCA5869328CCE62500568B95 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CCA5869528CCE66200568B95 /* Constants.swift */,
+				CCA5869728CCE67500568B95 /* Commons.swift */,
+				CCD3FFE428D46A6D00307CD1 /* ExtensionUIColor.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CCA5867428CCE5FF00568B95 /* CoffeeApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCA5868C28CCE60000568B95 /* Build configuration list for PBXNativeTarget "CoffeeApp" */;
+			buildPhases = (
+				CCA5867128CCE5FF00568B95 /* Sources */,
+				CCA5867228CCE5FF00568B95 /* Frameworks */,
+				CCA5867328CCE5FF00568B95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoffeeApp;
+			packageProductDependencies = (
+				CCD3FFE728D46B6400307CD1 /* SnapKit */,
+			);
+			productName = CoffeeApp;
+			productReference = CCA5867528CCE5FF00568B95 /* CoffeeApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CCA5866D28CCE5FF00568B95 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					CCA5867428CCE5FF00568B95 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = CCA5867028CCE5FF00568B95 /* Build configuration list for PBXProject "CoffeeApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CCA5866C28CCE5FF00568B95;
+			packageReferences = (
+				CCD3FFE628D46B6400307CD1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = CCA5867628CCE5FF00568B95 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CCA5867428CCE5FF00568B95 /* CoffeeApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CCA5867328CCE5FF00568B95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCA5868828CCE60000568B95 /* LaunchScreen.storyboard in Resources */,
+				CCA5868528CCE60000568B95 /* Assets.xcassets in Resources */,
+				CCA5868028CCE5FF00568B95 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CCA5867128CCE5FF00568B95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCA586AB28CCE7F900568B95 /* MyProfileViewController.swift in Sources */,
+				CCA586A528CCE79F00568B95 /* LoginViewController.swift in Sources */,
+				CCA5869628CCE66200568B95 /* Constants.swift in Sources */,
+				CCA586A128CCE72800568B95 /* DetailProductView.swift in Sources */,
+				CC4D0B2928CDD00A00BBA563 /* LoginNetworkManager.swift in Sources */,
+				CCA5869E28CCE6F600568B95 /* MainTableViewCell.swift in Sources */,
+				CCA5869C28CCE6B700568B95 /* Product.swift in Sources */,
+				CCD3FFE528D46A6D00307CD1 /* ExtensionUIColor.swift in Sources */,
+				CCA5867D28CCE5FF00568B95 /* ViewController.swift in Sources */,
+				CCA5867928CCE5FF00568B95 /* AppDelegate.swift in Sources */,
+				CCA5869A28CCE6A000568B95 /* NetworkManager.swift in Sources */,
+				CCA5867B28CCE5FF00568B95 /* SceneDelegate.swift in Sources */,
+				CCA586A928CCE7D800568B95 /* DetailProductViewController.swift in Sources */,
+				CC4D0B2728CD8F7700BBA563 /* LoginInfo.swift in Sources */,
+				CCA586B028CD631500568B95 /* LoginViewController0911.swift in Sources */,
+				CCA586A328CCE75800568B95 /* LoginView.swift in Sources */,
+				CCA5869828CCE67500568B95 /* Commons.swift in Sources */,
+				CCA5868328CCE5FF00568B95 /* CoffeeApp.xcdatamodeld in Sources */,
+				CCA586A728CCE7BB00568B95 /* MainTableViewCellController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CCA5867E28CCE5FF00568B95 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCA5867F28CCE5FF00568B95 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CCA5868628CCE60000568B95 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCA5868728CCE60000568B95 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CCA5868A28CCE60000568B95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CCA5868B28CCE60000568B95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CCA5868D28CCE60000568B95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KJK4573Q5V;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoffeeApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.henrykim92.CoffeeApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CCA5868E28CCE60000568B95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KJK4573Q5V;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoffeeApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.henrykim92.CoffeeApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CCA5867028CCE5FF00568B95 /* Build configuration list for PBXProject "CoffeeApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCA5868A28CCE60000568B95 /* Debug */,
+				CCA5868B28CCE60000568B95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCA5868C28CCE60000568B95 /* Build configuration list for PBXNativeTarget "CoffeeApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCA5868D28CCE60000568B95 /* Debug */,
+				CCA5868E28CCE60000568B95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CCD3FFE628D46B6400307CD1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CCD3FFE728D46B6400307CD1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCD3FFE628D46B6400307CD1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		CCA5868128CCE5FF00568B95 /* CoffeeApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CCA5868228CCE5FF00568B95 /* CoffeeApp.xcdatamodel */,
+			);
+			currentVersion = CCA5868228CCE5FF00568B95 /* CoffeeApp.xcdatamodel */;
+			path = CoffeeApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CCA5866D28CCE5FF00568B95 /* Project object */;
+}
