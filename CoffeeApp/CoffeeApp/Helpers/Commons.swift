@@ -9,12 +9,17 @@ import UIKit
 
 final class Commons {
     
-    func getDecimalPrice(price: Int) -> String {
+    // MARK: - getDecimalPrice()
+    func getDecimalPrice(price: String?) -> String {
         
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         
-        guard let prdPriceString = numberFormatter.string(from: NSNumber(value: price)) else { return "값 오류"}
+        guard let price = price else { return "" }
+        
+        let priceInt = Int(price)!
+        
+        guard let prdPriceString = numberFormatter.string(from: NSNumber(value: priceInt)) else { return "값 오류"}
         return String(prdPriceString) + "원"
     }
 

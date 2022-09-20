@@ -109,7 +109,7 @@ final class LoginViewController: UIViewController {
         items[1].image = UIImage(systemName: "person")
         
         print("탭바생성 후")
-        print(loginInfoView)
+        print("loginInfoView : \(loginInfoView)")
         vc2.loginUser = loginInfoView
         
         // 프리젠트로 탭바를 띄우기

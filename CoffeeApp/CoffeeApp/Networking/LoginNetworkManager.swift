@@ -72,13 +72,14 @@ final class LoginNetworkManager {
             print("respone : \(String(describing: response))")
             if error != nil {
                 print(error!)
-                print(error!.localizedDescription)
+                print(String(describing: error))
                 completion(.failure(.networkingError))
                 return
             }
             
             guard let safeData = data else {
-                print(error!.localizedDescription)
+                print(error!)
+                print(String(describing: error))
                 completion(.failure(.dataError))
                 return
             }
@@ -95,7 +96,8 @@ final class LoginNetworkManager {
                 completion(.success(login))
             } else {
                 print("Parse 실패")
-                print(error!.localizedDescription)
+                print(error!)
+                print(String(describing: error))
                 completion(.failure(.parseError))
                 
             }
@@ -107,14 +109,23 @@ final class LoginNetworkManager {
         print(#function)
         print("4")
         
+        // 별거없고 그냥 json 데이터형식으로 이쁘게 프린트하기..
+        print("--------------------------------------------------------")
+        if let json = try? JSONSerialization.jsonObject(with: loginData, options: .mutableContainers),
+           let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) {
+            print(String(decoding: jsonData, as: UTF8.self))
+        } else {
+            print("이쁘게 뽑기 실패")
+        }
+        print("--------------------------------------------------------")
+        
         // 성공
         do {
             // 우리가 만들어 놓은 구조체(클래스 등)로 변환하는 객체와 메서드
             // (JSON 데이터 ====> LoginData 구조체)
             let loginUserDecode = try JSONDecoder().decode(LoginData.self, from: loginData)
-            print("loginUserDecode : \(loginUserDecode)")
-            print("loginUserDecode.resHead : \(loginUserDecode.resHead.retnCode)")
-            print("loginUserDecode.loginUser : \(loginUserDecode.loginUser)")
+
+            
             
 //            switch loginUserDecode.resHead.retnCode {
 //            case "200": // 성공
@@ -129,7 +140,7 @@ final class LoginNetworkManager {
             return loginUserDecode.loginUser
             // 실패
         } catch {
-            print(error.localizedDescription)
+            print(String(describing: error))
             return nil
         }
     }

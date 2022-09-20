@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Welcome
 struct ApiData: Codable {
     let resHead: ResHeadProduct
-    let resBodyProduct: ResBodyProduct
+    var resBodyProduct: ResBodyProduct
 
     enum CodingKeys: String, CodingKey {
         case resHead = "RES_HEAD"
@@ -22,7 +22,7 @@ struct ApiData: Codable {
 
 // MARK: - ResBody
 struct ResBodyProduct: Codable {
-    let prdList: [PrdList]
+    var prdList: [PrdList]
 
     enum CodingKeys: String, CodingKey {
         case prdList = "PRD_LIST"
@@ -33,17 +33,16 @@ struct ResBodyProduct: Codable {
 struct PrdList: Codable {
     let prdCateSub: String?
     let prdNameKr: String?
-    let inputID: String?
+    let inputID: InputID?
     let prdCnt: String?
     let prdSeq: Int?
     let prdPrice: String?
-    let dbStatus: String?
+    let dbStatus: DBStatus?
     let prdNameEn: String?
-    let prdCate: String?
+    let prdCate: PrdCate?
     let prdNotice: String?
     let prdImg: String?
     let prdType: String?
-    let inputDate: String?
 
     enum CodingKeys: String, CodingKey {
         case prdCateSub = "PRD_CATE_SUB"
@@ -58,14 +57,25 @@ struct PrdList: Codable {
         case prdNotice = "PRD_NOTICE"
         case prdImg = "PRD_IMG"
         case prdType = "PRD_TYPE"
-        case inputDate = "INPUT_DATE"
     }
 }
 
 // MARK: - ResHead
+enum DBStatus: String, Codable {
+    case a = "A"
+}
+
+enum InputID: String, Codable {
+    case jymin = "jymin"
+}
+
+enum PrdCate: String, Codable {
+    case drink = "DRINK"
+}
+
+// MARK: - ResHead
 struct ResHeadProduct: Codable {
-    let retnMent: String
-    let retnCode: String
+    let retnMent, retnCode: String
 
     enum CodingKeys: String, CodingKey {
         case retnMent = "RETN_MENT"

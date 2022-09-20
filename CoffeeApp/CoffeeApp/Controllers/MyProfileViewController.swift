@@ -14,16 +14,16 @@ class MyProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        view.backgroundColor = #colorLiteral(red: 1, green: 0.8557364941, blue: 0.349532187, alpha: 1) // ffd448
         view.backgroundColor = UIColor(rgb: 0xffd448)
         test()
     }
     
     func test() {
-        print(loginUser?.memberName)
-        print(loginUser?.memberNick)
-        print(loginUser?.memberSeq)
-        print(loginUser?.ment)
+        guard let loginUserInfo = loginUser else { return }
+        print(loginUserInfo.memberName ?? "")
+        print(loginUserInfo.memberNick ?? "")
+        print(loginUserInfo.memberSeq ?? "")
+        print(loginUserInfo.ment ?? "")
     }
 
 }

@@ -15,7 +15,6 @@ enum ProductNetworkError: Error {
 }
 
 //MARK: - Networking (서버와 통신하는) 클래스 모델
-
 final class ProductNetworkManager {
     
     // 여러화면에서 통신을 한다면, 일반적으로 싱글톤으로 만듦
@@ -25,13 +24,13 @@ final class ProductNetworkManager {
         
     typealias ProductNetworkCompletion = (Result<[PrdList], ProductNetworkError>) -> Void
 
-    // 네트워킹 요청하는 함수 (음악데이터 가져오기)
+    // 네트워킹 요청하는 함수 (상품데이터 가져오기)
     func fetchProduct(searchTerm: String, completion: @escaping ProductNetworkCompletion) {
         print(#function)
         print("2")
 
         let urlString = ProjectApi.productListRequestURL
-        print(urlString)
+        print("urlString : \(urlString)")
         
         performProductListRequest(with: urlString, search: searchTerm) { result in
             print("5")
@@ -41,13 +40,12 @@ final class ProductNetworkManager {
     }
     
     // 실제 Request하는 함수 (비동기적 실행 ===> 클로저 방식으로 끝난 시점을 전달 받도록 설계)
-    private func performProductListRequest(with urlString: String, search searchText: String, completion: @escaping ProductNetworkCompletion) {
+    private func performProductListRequest(with urlString: String, search searchText: String?, completion: @escaping ProductNetworkCompletion) {
         print(#function)
         print("3")
         
         let PRD_CATE = "DRINK"
-        let PRD_CATE_SUB = "0001"
-        
+        let PRD_CATE_SUB = ""
         
         let param = [
                         "PRD_CATE" : PRD_CATE,
@@ -80,16 +78,17 @@ final class ProductNetworkManager {
         let task = session.dataTask(with: request) { (data, response, error) in
             
             print("response : \(String(describing: response))")
-            
+
             if error != nil {
                 print(error!)
-                print(error!.localizedDescription)
+                print(String(describing: error))
                 completion(.failure(.networkingError))
                 return
             }
             
             guard let safeData = data else {
-                print(error!.localizedDescription)
+                print("바인딩 실패")
+                print(String(describing: error))
                 completion(.failure(.dataError))
                 return
             }
@@ -97,12 +96,13 @@ final class ProductNetworkManager {
             
             // 메서드 실행해서, 결과를 받음
             if let products = self.parseProductJSON(safeData) {
+
                 print("Parse 실행")
-                print("products : \(products)")
+//                dump(products)
                 completion(.success(products))
             } else {
                 print("Parse 실패")
-//                print(error!.localizedDescription)
+                print(error!)
                 print(String(describing: error))
                 completion(.failure(.parseError))
                 
@@ -116,20 +116,31 @@ final class ProductNetworkManager {
         print(#function)
         print("4")
         
-        print("productData : \(productData)")
-        let safedata1 = String(data: productData, encoding: .utf8) ?? ""
-        print("safedata1 : \(safedata1)")
+//        dump(productData)
+        // 별거없고 그냥 json 데이터형식으로 이쁘게 프린트하기..
+        print("--------------------------------------------------------")
+        if let json = try? JSONSerialization.jsonObject(with: productData, options: .mutableContainers),
+           let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) {
+            print(String(decoding: jsonData, as: UTF8.self))
+        } else {
+            print("이쁘게 뽑기 실패")
+        }
+        print("--------------------------------------------------------")
         
         // 성공
+        
         do {
             // 우리가 만들어 놓은 구조체(클래스 등)로 변환하는 객체와 메서드
-            // (JSON 데이터 ====> MusicData 구조체)
-            let productDataDecode = try JSONDecoder().decode(ApiData.self, from: productData)
-            print("productData23493748 : \(productData)")
+            // (JSON 데이터 ====> ApiData 구조체)
+            var productDataDecode = try JSONDecoder().decode(ApiData.self, from: productData)
+            if productDataDecode.resBodyProduct.prdList[0].prdSeq == nil {
+                print("널널널")
+                let _ = productDataDecode.resBodyProduct.prdList = []
+            }
+            
             return productDataDecode.resBodyProduct.prdList
         // 실패
         } catch {
-//            print(error.localizedDescription)
             print("실패!!!")
             print(String(describing: error))
             return nil

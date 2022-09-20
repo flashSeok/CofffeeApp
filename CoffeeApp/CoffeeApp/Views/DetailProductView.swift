@@ -23,7 +23,6 @@ class DetailProductView: UIView {
                 // 멤버가 없으면 버튼을 "SAVE"라고 셋팅
 //                saveButton.setTitle("SAVE", for: .normal)
                 // 멤버가 없으면, 타입 저장 속성의 현재 숫자 가져오기
-                productNameKR.text = "\(selectedProduct?.prdNameKr)"
                 return
             }
             // 멤버가 있으면
@@ -31,19 +30,12 @@ class DetailProductView: UIView {
             productNameKR.text = selectedProduct.prdNameKr
             productNameEN.text = selectedProduct.prdNameEn
             productNotice.text = selectedProduct.prdNotice
-            
-            guard let price = selectedProduct.prdPrice else { return }
-            var priceInt = Int(price)!
-            
-            productPrice.text = commons.getDecimalPrice(price: priceInt)
+            productPrice.text = commons.getDecimalPrice(price: selectedProduct.prdPrice)
             
             loadImage()
-        
         }
     }
 
-
-    
     // MARK: - 컨텐츠 생성
     let mainImageView: UIImageView = {
         let imageView = UIImageView()

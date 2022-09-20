@@ -17,7 +17,7 @@ final class DetailProductViewController: UIViewController {
         view = detailProductView
 //        view.backgroundColor = .gray
         print("넘어온 데이터")
-        print(selectedProduct)
+        dump(selectedProduct)
     }
     
     override func viewDidLoad() {
