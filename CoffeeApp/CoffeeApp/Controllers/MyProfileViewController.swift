@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyProfileViewController: UIViewController {
+final class MyProfileViewController: UIViewController {
 
     var loginUser: LoginInfo?
     

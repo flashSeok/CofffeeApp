@@ -10,7 +10,6 @@ import SnapKit
 
 class DetailProductView: UIView {
     
-    let commons = Commons()
     var imageUrl: String?
 
     //MARK: - 멤버 저장속성 구현
@@ -30,7 +29,7 @@ class DetailProductView: UIView {
             productNameKR.text = selectedProduct.prdNameKr
             productNameEN.text = selectedProduct.prdNameEn
             productNotice.text = selectedProduct.prdNotice
-            productPrice.text = commons.getDecimalPrice(price: selectedProduct.prdPrice)
+            productPrice.text = selectedProduct.prdPrice
             
             loadImage()
         }
@@ -39,7 +38,7 @@ class DetailProductView: UIView {
     // MARK: - 컨텐츠 생성
     let mainImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .yellow
+//        imageView.backgroundColor = .yellow
         
         return imageView
     }()
@@ -48,7 +47,7 @@ class DetailProductView: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         label.textAlignment = .left
-        label.backgroundColor = .lightGray
+//        label.backgroundColor = .lightGray
         
         return label
     }()
@@ -58,7 +57,7 @@ class DetailProductView: UIView {
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = UIColor.darkGray
         label.textAlignment = .left
-        label.backgroundColor = .lightGray
+//        label.backgroundColor = .lightGray
         
         return label
     }()
@@ -67,7 +66,7 @@ class DetailProductView: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.textAlignment = .left
-        label.backgroundColor = .lightGray
+//        label.backgroundColor = .lightGray
         label.numberOfLines = 3
         label.lineBreakStrategy = .hangulWordPriority
         
@@ -78,9 +77,23 @@ class DetailProductView: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         label.textAlignment = .left
-        label.backgroundColor = .lightGray
+//        label.backgroundColor = .lightGray
         
         return label
+    }()
+    
+    
+    // 주문
+    let orderButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("주문하기", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20) // 폰트사이즈 및 굵기
+        button.isEnabled = true
+        button.layer.cornerRadius = 5 // 모서리 둥글게
+        button.clipsToBounds = true // 위 코드랑 세트
+        button.layer.borderWidth = 1 // 테두리 굵기
+        
+        return button
     }()
     
     
@@ -101,7 +114,6 @@ class DetailProductView: UIView {
     
     
     //MARK: - 오토레이아웃 셋팅
-    
     // 오토레이아웃 업데이트
     override func updateConstraints() {
         print(#function)
@@ -119,6 +131,9 @@ class DetailProductView: UIView {
         self.addSubview(productNameEN)
         self.addSubview(productNotice)
         self.addSubview(productPrice)
+        self.addSubview(orderButton)
+        
+        
     }
     
     func setConstraints() {
@@ -129,13 +144,14 @@ class DetailProductView: UIView {
         setProductNameEnLabelConstraints()
         setProductNoticeLabelConstraints()
         setProductPriceLabelConstraints()
+        setOrderButtonConstraints()
+        
     }
     
     func setMainImageViewConstraints() {
         print(#function)
         
         mainImageView.snp.makeConstraints { make in
-            
             make.width.height.equalTo(frame.width)
             make.top.equalTo(self.safeAreaLayoutGuide)
             make.centerX.equalTo(self.safeAreaLayoutGuide)
@@ -150,7 +166,7 @@ class DetailProductView: UIView {
             make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading).offset(20)
             make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).offset(-20)
             make.height.equalTo(40)
-            make.top.equalTo(self.mainImageView.snp.bottom).offset(10)
+            make.top.equalTo(self.mainImageView.snp.bottom).offset(20)
            
         }
     }
@@ -161,7 +177,7 @@ class DetailProductView: UIView {
         productNameEN.snp.makeConstraints { make in
             make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading).offset(20)
             make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).offset(-20)
-            make.top.equalTo(productNameKR.snp.bottom).offset(10)
+            make.top.equalTo(productNameKR.snp.bottom).offset(5)
           
         }
     }
@@ -172,7 +188,7 @@ class DetailProductView: UIView {
         productNotice.snp.makeConstraints { make in
             make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading).offset(20)
             make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).offset(-20)
-            make.top.equalTo(productNameEN.snp.bottom).offset(15)
+            make.top.equalTo(productNameEN.snp.bottom).offset(10)
         }
     }
     
@@ -180,12 +196,29 @@ class DetailProductView: UIView {
         print(#function)
         
         productPrice.snp.makeConstraints { make in
+            make.top.equalTo(productNotice.snp.bottom).offset(20)
             make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading).offset(20)
             make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).offset(-20)
-            make.top.equalTo(productNotice.snp.bottom).offset(20)
+            
         }
     }
     
+    
+    func setOrderButtonConstraints() {
+        orderButton.snp.makeConstraints { make in
+            make.top.equalTo(productPrice.snp.bottom).offset(30)
+            make.width.equalTo(self.frame.width/3)
+            make.height.equalTo(orderButton.snp.width).dividedBy(3.5)
+            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+            
+        }
+    }
+    
+
+    
+    
+    
+    // MARK: - loadImage()
     private func loadImage() {
         print(#function)
 //        guard let urlString = self.imageUrl, let url = URL(string: urlString)  else { return }

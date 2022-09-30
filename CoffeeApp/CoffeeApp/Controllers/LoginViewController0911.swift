@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController0911: UIViewController {
+final class LoginViewController0911: UIViewController {
 
     // MARK: - 이메일 입력하는 텍스트 뷰
     private lazy var emailTextFieldView: UIView = {
@@ -366,3 +366,6 @@ extension LoginViewController0911: UITextFieldDelegate {
         return true
     }
 }
+
+
+

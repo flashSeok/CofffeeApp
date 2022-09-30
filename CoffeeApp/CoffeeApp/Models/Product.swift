@@ -36,7 +36,7 @@ struct PrdList: Codable {
     let inputID: InputID?
     let prdCnt: String?
     let prdSeq: Int?
-    let prdPrice: String?
+    var prdPrice: String?
     let dbStatus: DBStatus?
     let prdNameEn: String?
     let prdCate: PrdCate?

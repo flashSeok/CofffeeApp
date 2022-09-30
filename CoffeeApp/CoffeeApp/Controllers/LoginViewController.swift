@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LoginViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     private let loginView = LoginView()
     
@@ -21,7 +21,7 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         print(#function)
         
-//        super.viewDidLoad()
+        super.viewDidLoad()
         setUpAddTarget()
         
     }
@@ -100,7 +100,7 @@ final class LoginViewController: UIViewController {
         // 탭바로 사용하기 위한 뷰 컨트롤러들 설정
         tabBarVC.setViewControllers([vc1, vc2], animated: false)
         tabBarVC.modalPresentationStyle = .fullScreen
-        tabBarVC.tabBar.backgroundColor = .white
+        tabBarVC.tabBar.backgroundColor = .yellow
         
         // 탭바 이미지 설정 (이미지는 애플이 제공하는 것으로 사용)
         guard let items = tabBarVC.tabBar.items else { return }
@@ -119,3 +119,4 @@ final class LoginViewController: UIViewController {
     }
 
 }
+

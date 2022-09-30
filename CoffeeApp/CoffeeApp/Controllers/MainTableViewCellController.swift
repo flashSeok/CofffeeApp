@@ -162,6 +162,7 @@ extension MainTableViewCellController: UITableViewDataSource {
     
 }
 
+// MARK: - UITableViewDelegate
 extension MainTableViewCellController: UITableViewDelegate {
     
     // 셀이 선택이 되었을때 어떤 동작을 할 것인지 뷰컨트롤러에게 물어봄
@@ -189,7 +190,7 @@ extension MainTableViewCellController: UITableViewDelegate {
     }
 }
 
-
+// MARK: - UISearchBarDelegate
 extension MainTableViewCellController: UISearchBarDelegate {
     
     // 입력하는 순간마다
@@ -212,6 +213,7 @@ extension MainTableViewCellController: UISearchBarDelegate {
         }
     }
     
+    // MARK: - searchBarSearchButtonClicked
     // 검색 버튼을 눌렀을 때
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchController.searchBar.text else { return }
@@ -234,6 +236,7 @@ extension MainTableViewCellController: UISearchBarDelegate {
         self.view.endEditing(true)
     }
     
+    // MARK: - searchBarCancelButtonClicked()
     // 캔슬 버튼 클릭시
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         print(#function)
@@ -261,29 +264,3 @@ extension MainTableViewCellController: UISearchBarDelegate {
 
 }
 
-
-
-#if DEBUG
-import SwiftUI
-struct ViewControllerRepresentable: UIViewControllerRepresentable {
-    
-    func updateUIViewController(_ uiView: UIViewController,context: Context) {
-        // leave this empty
-    }
-    @available(iOS 13.0.0, *)
-    func makeUIViewController(context: Context) -> UIViewController{
-        MainTableViewCellController()
-    }
-}
-@available(iOS 13.0, *)
-struct ViewControllerRepresentable_PreviewProvider: PreviewProvider {
-    static var previews: some View {
-        Group {
-            ViewControllerRepresentable()
-                .ignoresSafeArea()
-                .previewDisplayName(/*@START_MENU_TOKEN@*/"Preview"/*@END_MENU_TOKEN@*/)
-                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-        }
-        
-    }
-} #endif

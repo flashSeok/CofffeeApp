@@ -20,7 +20,7 @@ class MainTableViewCell: UITableViewCell {
     
     let mainImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .yellow
+//        imageView.backgroundColor = .yellow
 
         return imageView
     }()
@@ -28,7 +28,7 @@ class MainTableViewCell: UITableViewCell {
     let prdNameKR: UILabel = {
        let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.backgroundColor = .lightGray
+//        label.backgroundColor = .lightGray
         
         return label
     }()
@@ -36,7 +36,7 @@ class MainTableViewCell: UITableViewCell {
     let prdNameEn: UILabel = {
        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
-        label.backgroundColor = .lightGray
+//        label.backgroundColor = .lightGray
         label.textColor = UIColor.darkGray
         
         return label
@@ -44,7 +44,7 @@ class MainTableViewCell: UITableViewCell {
     
     let prdPrice: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .lightGray
+//        label.backgroundColor = .lightGray
         label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         return label
     }()
