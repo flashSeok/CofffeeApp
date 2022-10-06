@@ -14,10 +14,12 @@ import UIKit
 public enum ProjectApi {
     static let requestURL = "http://mjydbgg.cafe24.com/member/loginMember.do"
 //    static let requestURL = "http://172.30.1.51:9090/member/loginMember.do"
-//    static let mediaParam = "media=music"
 //    static let loginURL = "http://172.30.1.50:9090/member/loginMember.do"
     static let productListRequestURL = "http://mjydbgg.cafe24.com/product/getPrdList.do"
 //    static let productListRequestURL = "http://172.30.1.51:9090/product/getPrdList.do"
+    
+    static let orderRequestURL = "http://mjydbgg.cafe24.com/order/createOrder.do"
+    
     
 }
 

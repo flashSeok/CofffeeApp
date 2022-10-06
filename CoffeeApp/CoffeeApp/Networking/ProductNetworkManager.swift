@@ -83,6 +83,7 @@ final class ProductNetworkManager {
                 print(error!)
                 print(String(describing: error))
                 completion(.failure(.networkingError))
+                
                 return
             }
             
@@ -90,6 +91,7 @@ final class ProductNetworkManager {
                 print("바인딩 실패")
                 print(String(describing: error))
                 completion(.failure(.dataError))
+                
                 return
             }
 
@@ -143,6 +145,7 @@ final class ProductNetworkManager {
         } catch {
             print("실패!!!")
             print(String(describing: error))
+            
             return nil
         }
     }

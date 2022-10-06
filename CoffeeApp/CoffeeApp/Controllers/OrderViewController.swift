@@ -12,11 +12,18 @@ final class OrderViewController: UIViewController {
 
     private let orderView = OrderView()
 
-    
     var orderProduct: PrdList?
     
+    var orderType: String? = nil
+    var orderSize: String = "TALL"
+    var orderHereOrTogo: String = ""
     var espressoShotTimes: Int = 1
     var orderQty: Int = 1
+    
+    var orderList: [OrderList] = []
+
+    
+    
     
     // MARK: - loadView()
     override func loadView() {
@@ -83,6 +90,8 @@ final class OrderViewController: UIViewController {
     }
     
     @objc func tappedHereButton() {
+        self.orderHereOrTogo = "IN"
+        
         orderView.choiceHereButton.setTitleColor(.black, for: .normal)
         orderView.choiceHereButton.layer.borderWidth = 2.0
         orderView.choiceHereButton.layer.borderColor = UIColor(rgb: 0x00A862).cgColor
@@ -93,6 +102,8 @@ final class OrderViewController: UIViewController {
     }
     
     @objc func tappedTakeOutButton() {
+        self.orderHereOrTogo = "OUT"
+        
         orderView.choiceTakeOutButton.setTitleColor(.black, for: .normal)
         orderView.choiceTakeOutButton.layer.borderWidth = 2.0
         orderView.choiceTakeOutButton.layer.borderColor = UIColor(rgb: 0x00A862).cgColor
@@ -131,6 +142,8 @@ final class OrderViewController: UIViewController {
     }
 
     @objc func tappedHotButton() {
+        self.orderType = "HOT"
+        
         orderView.hotButton.backgroundColor = UIColor(rgb: 0xC8443A)
         orderView.hotButton.setTitleColor(.white, for: .normal)
         
@@ -140,6 +153,8 @@ final class OrderViewController: UIViewController {
     }
     
     @objc func tappedIceButton() {
+        self.orderType = "ICE"
+        
         orderView.iceButton.backgroundColor = UIColor(rgb: 0x0076FF)
         orderView.iceButton.setTitleColor(.white, for: .normal)
         
@@ -172,7 +187,77 @@ final class OrderViewController: UIViewController {
     }
     
     @objc func tappedOrderButton() {
+        orderNetwork()
+    }
+    
+    func orderNetwork() {
         print(#function)
+
+        let memeberSeq = UserDefaults.standard.object(forKey: "memberSeq")
+        
+        let orderSect = self.orderHereOrTogo
+        
+        let prdSeq = orderProduct!.prdSeq!
+        let orderCnt = self.orderQty
+        let orderShot = self.espressoShotTimes
+        guard let orderType = self.orderType else { return }
+        let orderSize = self.orderSize
+        
+        self.orderList = []
+        
+        let order = OrderList(prdSeq: prdSeq, orderCnt: orderCnt, orderShot: orderShot, orderType: orderType, orderSize: orderSize)
+        orderList.append(order)
+       
+        
+        let reqBody = ReqBody(memberSeq: memeberSeq as! Int, orderSect: orderSect, orderBranch: "부평점", orderList: orderList)
+        
+        let body = OrderInfo(reqBody: reqBody)
+        
+
+        
+        // 서버통신 시작
+        let orderNetworkManager = OrderNetworkManager.shared
+        
+        orderNetworkManager.fetchOrderResult(body: body) { result in
+            
+            switch result {
+            case .success(let orderResultData):
+                print("주문 성공")
+                print("orderList : \(orderResultData)")
+                
+                guard let retnCode = orderResultData.resHead.retnCode else { return }
+                
+                switch retnCode {
+                case "200": print("성공")
+                case "400": print("필수값 누락")
+                case "500": print("재고 없음")
+                case "999": print("시스템 오류")
+                default:
+                    break
+                }
+                
+                
+            case .failure(let error):
+                print("주문 실패")
+                print("error : \(error.localizedDescription)")
+                
+                return
+            }
+            
+        
+        }
+        
+        
+        
+        
+//        print("orderList")
+//        print(orderList)
+//
+//        print("reqBody")
+//        print(reqBody)
+//        print("--------")
+        
+
     }
     
     
@@ -188,7 +273,7 @@ final class OrderViewController: UIViewController {
         self.orderView.ventiUIView.isUserInteractionEnabled = true
       
         
-        //제쳐스 추가
+        //제스쳐 추가
         self.orderView.tallUIView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewTapped)))
         self.orderView.grandeUIView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewTapped)))
         self.orderView.ventiUIView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.viewTapped)))
@@ -213,6 +298,8 @@ final class OrderViewController: UIViewController {
     }
     
     func tappedTallSize() {
+        self.orderSize = "TALL"
+        
         orderView.tallLabel.textColor = .black
         orderView.tallUIView.layer.borderColor = UIColor(rgb: 0x00A862).cgColor
         orderView.tallUIView.layer.borderWidth = 2.0
@@ -228,6 +315,8 @@ final class OrderViewController: UIViewController {
     }
     
     func tappedGrandeSize() {
+        self.orderSize = "GRANDE"
+        
         orderView.grandeLabel.textColor = .black
         orderView.grandeUIView.layer.borderColor = UIColor(rgb: 0x00A862).cgColor
         orderView.grandeUIView.layer.borderWidth = 2.0
@@ -243,6 +332,8 @@ final class OrderViewController: UIViewController {
     }
     
     func tappedVentiSize() {
+        self.orderSize = "VENTI"
+        
         orderView.ventiLabel.textColor = .black
         orderView.ventiUIView.layer.borderColor = UIColor(rgb: 0x00A862).cgColor
         orderView.ventiUIView.layer.borderWidth = 2.0

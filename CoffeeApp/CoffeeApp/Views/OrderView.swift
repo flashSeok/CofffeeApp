@@ -350,7 +350,6 @@ class OrderView: UIView {
         label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         label.textAlignment  = .center
 
-        
         return label
     }()
                                 

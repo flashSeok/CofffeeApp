@@ -36,7 +36,8 @@ struct LoginInfo: Codable {
 
 // MARK: - ResHead
 struct ResHead: Codable {
-    let retnMent, retnCode: String
+    let retnMent: String
+    let retnCode: String
 
     enum CodingKeys: String, CodingKey {
         case retnMent = "RETN_MENT"

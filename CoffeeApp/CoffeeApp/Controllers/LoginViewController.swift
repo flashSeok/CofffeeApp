@@ -60,6 +60,17 @@ class LoginViewController: UIViewController {
             case .success(let loginInfo):
                 print("loginInfo : \(loginInfo)")
                 self.loginInfoView = loginInfo
+                
+                UserDefaults.standard.setValue(self.loginInfoView?.memberSeq, forKey: "memberSeq")
+                UserDefaults.standard.setValue(self.loginInfoView?.memberName, forKey: "memberName")
+                UserDefaults.standard.setValue(self.loginInfoView?.memberNick, forKey: "memberNick")
+                
+//                print("USER DEFAULTS")
+//                print(UserDefaults.standard.object(forKey: "memberSeq"))
+//                print(UserDefaults.standard.object(forKey: "memberName"))
+//                print(UserDefaults.standard.object(forKey: "memberNick"))
+//                print("USER DEFAULTS")
+                
                      
                 if let _ = loginInfo.ment {
                     DispatchQueue.main.async {
@@ -107,10 +118,13 @@ class LoginViewController: UIViewController {
         
         items[0].image = UIImage(systemName: "menucard")
         items[1].image = UIImage(systemName: "person")
-        
+
         print("탭바생성 후")
         print("loginInfoView : \(loginInfoView)")
         vc2.loginUser = loginInfoView
+        
+        
+        
         
         // 프리젠트로 탭바를 띄우기
         self.present(tabBarVC, animated: true)

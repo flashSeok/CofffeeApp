@@ -33,6 +33,9 @@
 		CCD3FFE528D46A6D00307CD1 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3FFE428D46A6D00307CD1 /* ExtensionUIColor.swift */; };
 		CCD3FFE828D46B6400307CD1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CCD3FFE728D46B6400307CD1 /* SnapKit */; };
 		CCE5FDF628E4A3AC00E44128 /* ExtensionUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE5FDF528E4A3AC00E44128 /* ExtensionUILabel.swift */; };
+		CCE5FE1E28EC31D000E44128 /* OrderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE5FE1D28EC31D000E44128 /* OrderInfo.swift */; };
+		CCE5FE2028EE8BC100E44128 /* OrderNetoworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE5FE1F28EE8BC100E44128 /* OrderNetoworkManager.swift */; };
+		CCE5FE2228EF123700E44128 /* OrderResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE5FE2128EF123700E44128 /* OrderResultData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,9 @@
 		CCA586AF28CD631500568B95 /* LoginViewController0911.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController0911.swift; sourceTree = "<group>"; };
 		CCD3FFE428D46A6D00307CD1 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		CCE5FDF528E4A3AC00E44128 /* ExtensionUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUILabel.swift; sourceTree = "<group>"; };
+		CCE5FE1D28EC31D000E44128 /* OrderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfo.swift; sourceTree = "<group>"; };
+		CCE5FE1F28EE8BC100E44128 /* OrderNetoworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderNetoworkManager.swift; sourceTree = "<group>"; };
+		CCE5FE2128EF123700E44128 /* OrderResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResultData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,8 @@
 			children = (
 				CCA5869B28CCE6B700568B95 /* Product.swift */,
 				CC4D0B2628CD8F7700BBA563 /* LoginInfo.swift */,
+				CCE5FE1D28EC31D000E44128 /* OrderInfo.swift */,
+				CCE5FE2128EF123700E44128 /* OrderResultData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -151,6 +159,7 @@
 				CCA5869928CCE6A000568B95 /* ProductNetworkManager.swift */,
 				CC5BEA6D28D483D200AFE07D /* NetworkManager0916.swift */,
 				CC4D0B2828CDD00A00BBA563 /* LoginNetworkManager.swift */,
+				CCE5FE1F28EE8BC100E44128 /* OrderNetoworkManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -244,11 +253,14 @@
 			files = (
 				CCA586AB28CCE7F900568B95 /* MyProfileViewController.swift in Sources */,
 				CCA586A528CCE79F00568B95 /* LoginViewController.swift in Sources */,
+				CCE5FE2028EE8BC100E44128 /* OrderNetoworkManager.swift in Sources */,
+				CCE5FE1E28EC31D000E44128 /* OrderInfo.swift in Sources */,
 				CCA5869628CCE66200568B95 /* Constants.swift in Sources */,
 				CCA586A128CCE72800568B95 /* DetailProductView.swift in Sources */,
 				CC4D0B2928CDD00A00BBA563 /* LoginNetworkManager.swift in Sources */,
 				CCA5869E28CCE6F600568B95 /* MainTableViewCell.swift in Sources */,
 				CCA5869C28CCE6B700568B95 /* Product.swift in Sources */,
+				CCE5FE2228EF123700E44128 /* OrderResultData.swift in Sources */,
 				CCE5FDF628E4A3AC00E44128 /* ExtensionUILabel.swift in Sources */,
 				CCD3FFE528D46A6D00307CD1 /* ExtensionUIColor.swift in Sources */,
 				CC5BEA6E28D483D200AFE07D /* NetworkManager0916.swift in Sources */,

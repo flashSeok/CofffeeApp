@@ -28,7 +28,6 @@ final class LoginNetworkManager {
         print(#function)
         print("2")
         
-        //        let urlString = "\(MusicApi.requestUrl)\(MusicApi.mediaParam)&term=\(searchTerm)"
         let urlString = ProjectApi.requestURL
         print(urlString)
         
@@ -113,6 +112,7 @@ final class LoginNetworkManager {
         print("--------------------------------------------------------")
         if let json = try? JSONSerialization.jsonObject(with: loginData, options: .mutableContainers),
            let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) {
+            print("jsonData : \(jsonData)")
             print(String(decoding: jsonData, as: UTF8.self))
         } else {
             print("이쁘게 뽑기 실패")
